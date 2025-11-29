@@ -7,9 +7,14 @@ import com.codegnan.cricket.model.Player;
 import com.codegnan.cricket.service.PlayerService;
 import com.codegnan.cricket.service.PlayerServiceImpl;
 
+// Controller class — contains the main method and performs CRUD
+// operations by communicating with the Service layer.
+
 public class PlayerController {
 
     public static void main(String[] args) {
+    	
+    	// Creating service object to access CRUD operations
 
         PlayerService service = new PlayerServiceImpl();
 
@@ -25,12 +30,14 @@ public class PlayerController {
         System.out.println("All Players");
         System.out.println("++++++++++++++++++++++++++");
 
+        // DISPLAY ALL PLAYERS
+        
         List<Player> players = service.getAllPlayers();
         for (Player p : players) {
             System.out.println(p);
         }
 
-        // Get player by ID 6
+        // GET PLAYER BY ID 6
         System.out.println("\nFetching Player with ID: 6");
         try {
             Player fetchPlayer = service.getPlayerById(6);
@@ -39,7 +46,7 @@ public class PlayerController {
             e.printStackTrace();
         }
 
-        // Update player with ID 3
+        // UPDATE PLAYER with ID 3
         System.out.println("\nUpdating Player with ID: 3");
         try {
             Player updated = service.updatePlayer(new Player(3, "Jasprit Bumrah", "Bowler", 240, 380));
@@ -48,7 +55,7 @@ public class PlayerController {
             e.printStackTrace();
         }
 
-        // Delete player with ID 2
+        // DELETE PLAYER with ID 2
         System.out.println("\nDeleting Player with ID: 2");
         try {
             service.deletePlayer(2);
@@ -57,7 +64,7 @@ public class PlayerController {
             e.printStackTrace();
         }
 
-        // After all modification final result
+        // After all modification Final Optput
         System.out.println("\nAfter all modifications, final player list:");
         System.out.println("++++++++++++++++++++++++++");
 
