@@ -7,19 +7,23 @@ import java.util.List;
 import com.codegnan.cricket.exceptions.PlayerNotFoundException;
 import com.codegnan.cricket.model.Player;
 
+// DAO implementation class — performs CRUD on Player data stored in a List.
+// Uses in-memory list instead of database.
 
 public class PlayerDaoImpl implements PlayerDao {
 
+	// Temporary storage for players (acts like database table)
+	
     List<Player> playerList = new ArrayList<>();
 
     @Override
     public void save(Player player) {
-        playerList.add(player);
+        playerList.add(player);  // adding player to list
     }
 
     @Override
     public List<Player> findAll() {
-        return playerList;
+        return playerList; // return whole player list
     }
 
     @Override
@@ -36,7 +40,7 @@ public class PlayerDaoImpl implements PlayerDao {
     public Player update(Player player) throws PlayerNotFoundException {
         for(int i = 0; i < playerList.size(); i++) {
             if(playerList.get(i).getId() == player.getId()) {
-                playerList.set(i, player);
+                playerList.set(i, player); // replace old record with updated record
                 return player;
             }
         }
@@ -48,7 +52,7 @@ public class PlayerDaoImpl implements PlayerDao {
         boolean found = false;
         for(int i = 0; i < playerList.size(); i++) {
             if(playerList.get(i).getId() == id) {
-                playerList.remove(i);
+                playerList.remove(i); // delete player
                 found = true;
                 break;
             }
