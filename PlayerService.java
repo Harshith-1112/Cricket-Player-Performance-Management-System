@@ -2,6 +2,8 @@ package com.codegnan.cricket.service;
 
 import java.util.List;
 
+// Service interface — contains business logic level operations.
+
 import com.codegnan.cricket.exceptions.PlayerNotFoundException;
 import com.codegnan.cricket.model.Player;
 
