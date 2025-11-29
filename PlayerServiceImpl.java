@@ -7,9 +7,12 @@ import com.codegnan.cricket.dao.PlayerDaoImpl;
 import com.codegnan.cricket.exceptions.PlayerNotFoundException;
 import com.codegnan.cricket.model.Player;
 
+//Service implementation which calls DAO methods.
+//Acts as a middle layer between controller and DAO.
+
 public class PlayerServiceImpl implements PlayerService {
 
-    PlayerDao dao = new PlayerDaoImpl();
+    PlayerDao dao = new PlayerDaoImpl(); // dependency injection of DAO
 
     @Override
     public void addPlayer(Player player) {
