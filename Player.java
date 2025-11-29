@@ -2,16 +2,21 @@ package com.codegnan.cricket.model;
 
 public class Player {
 
-    private int id;
-    private String name;
-    private String role;    // Batsman/Bowler/All-rounder
-    private int runs;
-    private int wickets;
+    private int id;       // player ID
+    private String name;  // Player name
+    private String role;  // Player role (Batsman / Bowler / All-rounder / Wicket-Keeper)
+    private int runs;     // Total career runs
+    private int wickets;  // Total career wickets
 
+    // Default constructor
+    
     public Player() {
         super();
     }
-
+    
+    // Parameterized constructor
+    
+    
     public Player(int id, String name, String role, int runs, int wickets) {
         super();
         this.id = id;
@@ -20,6 +25,8 @@ public class Player {
         this.runs = runs;
         this.wickets = wickets;
     }
+    
+    // Getters and setters
 
     public int getId() {
         return id;
@@ -61,6 +68,8 @@ public class Player {
         this.wickets = wickets;
     }
 
+    // Printing player details using toString method
+    
     @Override
     public String toString() {
         return "Player [id=" + id + ", name=" + name + ", role=" + role + ", runs=" + runs + ", wickets=" + wickets + "]";
